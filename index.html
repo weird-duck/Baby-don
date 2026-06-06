@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freya's Quest</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stars"></div>
+
+<section class="screen active" id="boot">
+<h1>CAMP HALF-BLOOD ARCHIVES</h1>
+<pre id="bootText"></pre>
+<button id="startBtn" class="hidden">ACCESS FILE</button>
+</section>
+
+<section class="screen" id="oracle">
+<h1>THE ORACLE</h1>
+<p>A daughter of beauty, wit, and spite,<br>Must walk a path this starry night.<br> Past beasts and gods she soon shall roam.<br> To find a treasure close to home. </p>
+<button onclick="nextScreen('chiron')">ACCEPT QUEST</button>
+</section>
+
+<section class="screen" id="chiron">
+
+<h1>CHIRON</h1>
+
+<div class="character-panel">
+
+    <img src="chiron.png"
+         class="portrait">
+
+    <div class="character-dialogue">
+
+        <div class="nameplate">
+
+            CHIRON
+
+        </div>
+
+        <div id="dialogue">
+
+        </div>
+
+    </div>
+
+</div>
+
+<button id="nextDialogue">
+    NEXT
+</button>
+
+</section>
+
+<section class="screen" id="camp">
+<h1>CAMP HALF-BLOOD</h1>
+<div class="grid">
+
+<button onclick="visit('bighouse')">
+    🏠 Big House
+</button>
+
+<button onclick="visit('pine')">
+    🌲 Thalia's Pine
+</button>
+
+<button onclick="startHellhound()">
+    ⚔ Arena
+</button>
+
+<button onclick="startEmpusa()">
+    🍓 Strawberry Fields
+</button>
+
+<button onclick="visit('amphi')">
+    🎭 Amphitheater
+</button>
+
+</div>
+<div id="eventBox">Choose a location.</div>
+<button id="olympusBtn" class="hidden" onclick="nextScreen('olympus')">TRAVEL TO OLYMPUS</button>
+</section>
+
+<section class="screen" id="olympus">
+<h1>OLYMPUS ELEVATOR</h1>
+<div id="floor">FLOOR 1</div>
+<button onclick="elevator()">ASCEND</button>
+</section>
+
+<section class="screen" id="hellhound">
+
+<h1>HELLHOUND</h1>
+
+<div class="character-panel">
+
+    <img src="hellhound.png"
+         class="portrait">
+
+    <div class="character-dialogue">
+
+        <div class="nameplate">
+
+            HELLHOUND
+
+        </div>
+
+        <div id="hellhoundLog">
+
+            A massive beast blocks your path.
+
+        </div>
+
+    </div>
+
+</div>
+
+<button onclick="hellhound('attack')">
+    Attack
+</button>
+
+<button onclick="hellhound('rizz')">
+    Rizz
+</button>
+
+<button onclick="hellhound('run')">
+    Run
+</button>
+
+</section>
+
+<section class="screen" id="empusa">
+
+<h1>EMPUSA</h1>
+
+<div class="character-panel">
+
+    <img src="empusa.png"
+         class="portrait">
+
+    <div class="character-dialogue">
+
+        <div class="nameplate">
+
+            EMPUSA
+
+        </div>
+
+        <div id="empusaLog">
+
+            She smiles.
+
+            Something feels wrong.
+
+        </div>
+
+    </div>
+
+</div>
+
+<button onclick="empusa('flirt')">
+    Flirt
+</button>
+
+<button onclick="empusa('attack')">
+    Attack
+</button>
+
+<button onclick="empusa('chiron')">
+    Ask Chiron
+</button>
+
+</section>
+
+<section class="screen" id="baby">
+<h1>BABY DON</h1>
+
+<p class="boss-objective">
+    OBJECTIVE: Lull Baby Don to sleep using hugs, kisses,
+    cuddles, and bedtime stories.
+</p>
+<div class="boss-container">
+
+    <img src="baby-don.jpeg" class="boss">
+
+    <div id="speechBubble">
+
+        YOU WILL NEVER DEFEAT ME.
+
+    </div>
+
+</div>
+
+<p id="awake">Awake: 100</p>
+<div class="bar"><div id="sleep"></div></div>
+<button onclick="boss('hug')">🤗 Hug</button>
+<button onclick="boss('kiss')">💋 Kiss</button>
+<button onclick="boss('cuddle')">🧸 Cuddle</button>
+<button onclick="boss('story')">📖 Story</button>
+<div id="bossLog">Baby Don appears...</div>
+</section>
+
+<section class="screen" id="ending">
+<h1>QUEST COMPLETE</h1>
+<p>YOU HAVE DEFEATED THE DREADED BABI DON</p>
+<h2>Congratulations brave camper.</h2>
+<p>Part 2 Coming Soon.</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
